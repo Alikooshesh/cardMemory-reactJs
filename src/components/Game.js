@@ -9,9 +9,9 @@ function Game() {
 
 
     const cardClick = (id) => {
-        if (!gameLock){
-            let tempcards = [...cards]
-            const itemFinder = tempcards.findIndex(item => item.id === id)
+        let tempcards = [...cards]
+        const itemFinder = tempcards.findIndex(item => item.id === id)
+        if (!gameLock && tempcards[itemFinder].found !== true){
             const isFlipped = tempcards[itemFinder].isFlipped
 
             tempcards[itemFinder] = {...tempcards[itemFinder] , isFlipped : !isFlipped , found : false}
