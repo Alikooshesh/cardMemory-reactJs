@@ -59,7 +59,6 @@ function Game() {
   return (
     <section className="memory-game">
         {cards.map(item => <Card key={item.id} card={item} onClick={()=> cardClick(item.id)}/> )}
-
     </section>
   );
 }
